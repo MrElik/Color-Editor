@@ -27,17 +27,22 @@ class ViewController: UIViewController {
     
     @IBAction func changeRedValue(_ sender: UISlider) {
         redLable.text = "Red: \(Int(redSlider.value))"
+        colorChange()
     }
     
     @IBAction func changeGreenValue(_ sender: UISlider) {
         greenLable.text = "Green: \(Int(greenSlider.value))"
+        colorChange()
     }
     
     @IBAction func changeBlueValue(_ sender: UISlider) {
         blueLable.text = "Blue: \(Int(blueSlider.value))"
+        colorChange()
         
     }
     
-    
+    func colorChange() {
+        palette.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+    }
 }
 
